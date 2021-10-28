@@ -1,4 +1,7 @@
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/audio-party-vue/'
+    : '/',
   chainWebpack: config => {
     /* disable insertion of assets as data urls b/c Phaser doesn't support it */
     const rules = [
