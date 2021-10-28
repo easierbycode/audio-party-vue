@@ -2,6 +2,7 @@ import { Scene } from 'phaser'
 import sky from '@/game/assets/sky.png'
 import bomb from '@/game/assets/bomb.png'
 import lips from '@/game/assets/lips.png'
+import nymph from '@/game/assets/nymph.png'
 import thudMp3 from '@/game/assets/thud.mp3'
 import thudOgg from '@/game/assets/thud.ogg'
 
@@ -15,7 +16,7 @@ export default class BootScene extends Scene {
     this.load.image('bomb', bomb)
     this.load.spritesheet(
       'nymph',
-      import('@/game/assets/nymph.png'),
+      nymph,
       {
         frameWidth: 66,
         frameHeight: 109
