@@ -49,6 +49,8 @@ export default class PlayScene extends Scene {
   create () {
     // this.add.image(400, 300, 'sky')
 
+    
+
     let bg = this.add.sprite(0, 0, 'bg1');
         bg.anims.create({
             frameRate: 1,
@@ -115,7 +117,7 @@ export default class PlayScene extends Scene {
         let x = window.innerWidth / 2;
         let y = window.innerHeight / 2;
         y -= 50;
-        let dancer = this.add.sprite(x, y, 'dancer').setScale(2);
+        let dancer = this.add.sprite(x, y, 'dancer').setScale(2).setVisible( false );
         dancer.anims.create({
             frameRate: 6,
             frames: this.anims.generateFrameNames('dancer', {
@@ -140,7 +142,7 @@ export default class PlayScene extends Scene {
         window.backgrounds = this.backgrounds;
 
 
-    const nymph = this.physics.add.sprite(400, 200, 'nymph', 0)
+    const nymph = this.physics.add.sprite(400, 200, 'nymph', 0).setVisible( false )
     nymph.anims.create({
       key: 'default',
       frames: nymph.anims.generateFrameNumbers('nymph'),
@@ -160,7 +162,7 @@ export default class PlayScene extends Scene {
 
 
     // const bomb = this.physics.add.image(400, 200, 'bomb')
-    const bomb = this.physics.add.sprite(400, 200, 'nymph', 0)
+    const bomb = this.physics.add.sprite(400, 200, 'nymph', 0).setVisible( false )
     bomb.anims.create({
       key: 'default',
       frames: bomb.anims.generateFrameNumbers('nymph'),
@@ -176,6 +178,25 @@ export default class PlayScene extends Scene {
     bomb.setScale( 5 )
 
     window.dancer = bomb
+
+
+
+    const lips = this.physics.add.sprite(400, 200, 'lips', 0)
+    lips.anims.create({
+      key: 'default',
+      frames: lips.anims.generateFrameNumbers('lips'),
+      frameRate: 12,
+      repeat: -1,
+      yoyo: true
+    })
+    lips.setBlendMode(1);
+    lips.play( 'default' )
+    lips.setCollideWorldBounds(true)
+    lips.body.onWorldBounds = true // enable worldbounds collision event
+    lips.setBounce(1)
+    lips.setVelocity(200, -100)
+
+    window.lips = lips
 
 
 

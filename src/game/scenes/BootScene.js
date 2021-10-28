@@ -1,6 +1,7 @@
 import { Scene } from 'phaser'
 import sky from '@/game/assets/sky.png'
 import bomb from '@/game/assets/bomb.png'
+import lips from '@/game/assets/lips.png'
 import nymph from '@/game/assets/nymph.png'
 import thudMp3 from '@/game/assets/thud.mp3'
 import thudOgg from '@/game/assets/thud.ogg'
@@ -30,15 +31,23 @@ export default class BootScene extends Scene {
           frameWidth: 30,
           frameHeight: 61
       }
-  ),
+  );
+  this.load.spritesheet(
+    'lips',
+    lips,
+    {
+        frameWidth: 500,
+        frameHeight: 270
+    }
+  );
   this.load.image(
       'starBg0', 
       require('../assets/star-bg-0.png')
-  ),
+  );
   this.load.image(
       'starBg1', 
       require('../assets/star-bg-1.png')
-  )
+  );
   this.load.image(
       'laser1', 
       require('../assets/lasers-bg1.png')

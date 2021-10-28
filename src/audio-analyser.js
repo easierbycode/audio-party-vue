@@ -76,12 +76,14 @@ var play = () => {
                 window.dancer.anims.setProgress(pct)
                 window.dancer2.anims.setProgress(pct)
                 window.nymph.anims.setProgress(pct)
+                // window.lips.anims.setProgress(pct)
             };
 
             // move lights based on 10th frequency bar
             if (i === 9 && window.bg) {
                 window.bg.anims.setProgress(pct)
                 window.lights.anims.setProgress(pct)
+                window.lips.anims.setProgress(pct)
             };
         }
         requestAnimationFrame(animate);
