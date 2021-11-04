@@ -185,7 +185,7 @@ export default class PlayScene extends Scene {
     lips.anims.create({
       key: 'default',
       frames: lips.anims.generateFrameNumbers('lips'),
-      frameRate: 12,
+      frameRate: 4,
       repeat: -1,
       yoyo: true
     })

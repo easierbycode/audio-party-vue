@@ -12,6 +12,8 @@ var play = () => {
     const audioContext = new AudioContext();
     audio1.play();
 
+    audio1.currentTime = 81;
+
     // if audio1.src = 'BASE64...'
     // audioSource = <MediaElementAudioSourceNode>audioContext.createMediaElementSource(audio1);
     // if <audio> has src='', use approach below
